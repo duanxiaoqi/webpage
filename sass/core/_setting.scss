@@ -1,0 +1,15 @@
+@charset "UTF-8";
+// setting scss
+
+// font相关
+//-----------------------------------------------------	
+$baseFontSize:          14px !default;
+$baseLineHeight:        1.5 !default;
+$baseFontFamily:        "Helvetica Neue", Helvetica, Tahoma, sans-serif !default;
+$fontCn:                "SimSun"; //宋体
+$fontYaHei:             "Microsoft Yahei"; //微软雅黑
+$fontHeiTi:             "SimHei"; //黑体
+
+// 路径相关
+//-----------------------------------------------------
+$imgPath:             '../images/' !default;

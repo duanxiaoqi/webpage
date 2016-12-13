@@ -1,0 +1,92 @@
+$default_fontsize: 40px;
+
+@function pxTorem($n: 0) {
+    @return ($n * 1px) / $default_fontsize * 1rem;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+.box {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/bg.png);
+	background-size: 100% 100%;
+
+	.logo {
+		width: pxTorem(467);
+		height: pxTorem(290);
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		top: pxTorem(60);
+	}
+	.food {
+		width: pxTorem(516);
+		height: pxTorem(356);
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		top: pxTorem(326);
+	}
+	.mai1 {
+		width: pxTorem(252);
+		height: pxTorem(138);
+		position: absolute;
+		left: 0;
+		top: pxTorem(650);
+	}
+	.mai2 {
+		width: pxTorem(336);
+		height: pxTorem(172);
+		position: absolute;
+		right: 0;
+		top: pxTorem(750);
+	}
+	.er {
+		width: pxTorem(250);
+		height: pxTorem(250);
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		top: pxTorem(568);
+		z-index: 10;
+	}
+
+	.word {
+		width: pxTorem(400);
+		font-size: pxTorem(32);
+		color: #db0019;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		top: pxTorem(872);
+
+		p {
+			font-size: pxTorem(18);
+			line-height: pxTorem(30);
+			color: #231815;
+		}
+	}
+
+	.bottom {
+		width: 100%;
+		height: pxTorem(60); 
+		position: absolute;
+		bottom: 0;
+		background: #db0019;
+
+		.foot {
+			width: pxTorem(248);
+			height: pxTorem(38);
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+		}
+	}
+
+}

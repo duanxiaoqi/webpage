@@ -1,0 +1,22 @@
+准备
+1、git help	帮助，加上具体的命令的名称查看更详细的内容。
+2、git config 配置   例如：git config --global user.name '王皓'
+	分为三个范围system、针对用户global、针对项目
+3、别名	git config --global alias.co checkout	checkout命令起名为co
+4、忽略跟踪一些文件
+
+基础
+1、git init 初始化
+	cd	进入文件夹
+	mkdir	新建文件夹
+2、git status	查看状态
+	git add index.html
+	git commit -m '添加 index.html 文件'		提交
+	git log					查看一下以往的提交
+3、git diff index.html		查看不同
+4、重命名-直接在文件系统上重命名   直接修改
+	git rm style.css			删除
+	git add theme.css			添加
+	git commit -m '把 style.css 重命名为 theme.css'
+
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+	<div class="box">
+		<img class="logo" src="img/logo.png" alt="" >
+		<img class="food" src="img/food.png" alt="">
+		<img class="mai1" src="img/mai1.png" alt="">
+		<img class="mai2" src="img/mai2.png" alt="">
+		<img class="er" src="img/er.png" alt="">
+		<div class="word">
+			<strong>请在麦当劳店员协助下兑换</strong>
+			<p>
+				兑换规则：<br />
+				1、每人限领取一次<br />
+				2、优惠券仅限6月5日早餐时间段使用<br />
+				3、本活动最终解释权归麦当劳所有<br />
+			</p>
+		</div>
+		<div class="bottom">
+			<img src="img/foot.png" alt="" class="foot">
+		</div>
+	</div>
+	<script type="text/javascript">
+	    !function(win) {
+	        function resize() {
+	            var domWidth = domEle.getBoundingClientRect().width;
+	            win.rem = domWidth / 16;
+	            domEle.style.fontSize = win.rem + "px"
+	        }
+	        var v, initial_scale, timeCode, dom = win.document,
+	            domEle = dom.documentElement,
+	            viewport = dom.querySelector('meta[name="viewport"]'),
+	            flexible = dom.querySelector('meta[name="flexible"]');
+	        if (viewport) {
+	            var o = viewport.getAttribute("content").match(/initial\-scale=(["']?)([\d\.]+)\1?/);
+	            if (o) {
+	                initial_scale = parseFloat(o[2]);
+	                v = parseInt(1 / initial_scale)
+	            }
+	        } else {
+	            if (flexible) {
+	                var o = flexible.getAttribute("content").match(/initial\-dpr=(["']?)([\d\.]+)\1?/);
+	                if (o) {
+	                    v = parseFloat(o[2]);
+	                    initial_scale = parseFloat((1 / v).toFixed(2))
+	                }
+	            }
+	        }
+	        if (!v && !initial_scale) {
+	            var n = (win.navigator.appVersion.match(/android/gi), 
+	                win.navigator.appVersion.match(/iphone/gi));
+	                v = win.devicePixelRatio;
+	                v = n ? v >= 3 ? 3 : v >= 2 ? 2 : 1 : 1, 
+	                initial_scale = 1 / v
+	        }
+	        if (domEle.setAttribute("data-dpr", v), !viewport) {
+	            if (
+	                viewport = dom.createElement("meta"), 
+	                viewport.setAttribute("name", "viewport"), 
+	                viewport.setAttribute(
+	                    "content", 
+	                    "initial-scale=" + 
+	                        initial_scale + 
+	                        ", maximum-scale=" + initial_scale + 
+	                        ", minimum-scale=" + initial_scale + 
+	                        ", user-scalable=no"
+	                ), 
+	                domEle.firstElementChild
+	            ) {
+	                domEle.firstElementChild.appendChild(viewport)
+	            } else {
+	                var m = dom.createElement("div");
+	                m.appendChild(viewport), dom.write(m.innerHTML)
+	            }
+	        }
+	        win.dpr = v;
+	        win.addEventListener("resize", function() {
+	            clearTimeout(timeCode), timeCode = setTimeout(resize, 300)
+	        }, false);
+	        win.addEventListener("pageshow", function(b) {
+	            b.persisted && ( clearTimeout(timeCode), timeCode = setTimeout(resize, 300) )
+	        }, false);
+	        resize()
+	    }(window);
+    </script>
+</body>
+</html>

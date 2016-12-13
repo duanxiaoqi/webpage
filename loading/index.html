@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<style type="text/css">
+		body {
+			padding: 0;
+			margin: 0;
+			background: #0097df;
+			text-align: center;
+			font: 1.8rem/2.5rem "宋体";
+			color: #fff;
+		}
+
+		#box {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+		}
+
+		#main {
+			position:absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%,-80%);
+		}
+		
+		#word {
+			position: absolute;
+			width: 15rem;
+			height: 4rem;
+			bottom: 2.5rem;
+			transform: translateX(-50%);
+		}
+
+		#main span {
+			display: inline-block;
+			width: .4rem;
+			height: .4rem;
+			background: #fff;
+			border-radius: 50%;
+
+		}
+
+		p {
+			width:11rem;
+			text-align: left;
+			transform: translateX(30%);
+
+		}
+	</style>
+	<script>
+		var screenWidth = screen.width;
+		if(screenWidth <= 320) {
+		    var rootFontSizeNumber = '.625';
+		    var rootFontSize = '.625rem';
+		} else if (screenWidth > 320 && screenWidth <= 375) {
+		    var rootFontSizeNumber = '.65';
+		    var rootFontSize = '.65rem';
+		} else {
+		    var rootFontSizeNumber = '.7';
+		    var rootFontSize = '.7rem';
+		}
+		document.write('<style>html {font-size: ' + rootFontSize + ';}</style>');
+
+		
+	</script>
+	<script type="text/javascript">
+		window.onload=function () {
+			var span=document.getElementsByTagName('span');
+			for (var i = 0; i < span.length; i++) {
+				span[i].style.display='none';
+			}
+			var num=0;
+
+			function hello() {
+				if (num<5) {
+					for (var i = 0; i < num+1; i++) {
+						span[i].style.display='inline-block';	
+					}
+					num++;
+
+				} else {
+					num=0;
+					for (var i = 0; i < span.length; i++) {
+						span[i].style.display='none';
+						console.log(i);
+					}
+				}
+				
+			}
+			//hello();
+			timer=setInterval(hello,1000);
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<div id="main">
+			<img src="img/logo.png" alt="" id="logo">
+			<p>
+				Loading
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</p>
+		</div>
+		<img src="img/word.png" alt="" id="word">
+	</div>
+</body>
+</html>
